@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+
+</head>
+<body ng-app="JPA">
+
+	<div class="container" ng-controller="PersonCtrl">
+		<h1>JPA Person</h1>
+
+		<!-- Add -->
+		<div>
+            Prenom : <input type="text" ng-model="prenom" class="form-control" placeholder="Firstname...">
+            Nom : <input type="text" ng-model="nom" class="form-control" placeholder="Name...">
+            <button  ng-click="addClick()">Add</button>
+            <button  ng-click="listClick()">List</button>
+        </div>
+
+        <div>
+            <h3> Les personnes </h3>
+            <ul>
+                <li ng-repeat="person in Lists">
+                    <ul style="list-style-type:none">
+                        <li> id : {{person.id}}</li><li>prénom : {{person.prenom}}</li><li>nom : {{person.nom}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+	</div>
+
+        <div class="container" ng-controller="ResiCt">
+        <h1>JPA Residence</h1>
+
+        <!-- Add -->
+        <div>
+            Taille : <input type="number" ng-model="taille" class="form-control" placeholder="">
+            Nb Pieces : <input type="number" ng-model="nbpiece" class="form-control" placeholder="">
+            <button  ng-click="addClick()">Add</button>
+            <button  ng-click="listClick()">List</button>
+        </div>
+
+        <div>
+            <h3> Les Residences </h3>
+            <ul>
+                <li ng-repeat="resi in Lists">
+                    <ul style="list-style-type:none">
+                        <li> id : {{resi.id}}</li><li>taille : {{resi.taille}}</li><li>nombre de pieces : {{resi.nbpiece}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Dependencies -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+
+    <script src="scripts/controllers/JPA.js"></script>
+
+
+</body>
+</html>
